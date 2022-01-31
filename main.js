@@ -1,6 +1,17 @@
-import './style.css'
+const menu = document.querySelector('#hamburger-button')
+const navbar = document.querySelector('.navbar')
+const searchIcon = document.querySelector('#search-icon')
+const searchForm = document.querySelector('.search-form')
+const searchClose = document.querySelector('#close')
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+
+searchIcon.onclick = () =>{
+    searchForm.classList.toggle('active')
+}
+searchClose.onclick = () =>{
+    searchForm.classList.remove('active')
+}
