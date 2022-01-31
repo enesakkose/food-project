@@ -1,0 +1,103 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    padding: 1rem 4.5rem;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    &-logo{
+        color: var(--dark);
+        font-size: 2rem;
+        font-weight: bold;
+
+        i{
+            color: var(--purple);
+        }
+    }
+
+    .navbar{
+        a{
+        font-size: 1.4rem;
+        padding: .5rem 1.5rem;
+        border-radius: .5rem;
+        color: var(--light-color);  
+        text-transform: capitalize;
+
+        &:hover{
+            color: #fff;
+            background: var(--purple);
+            transition: .2s all ease-in-out;
+        }
+    }
+        
+    }
+
+    .icons{
+        i,
+        a{
+        cursor: pointer;
+        margin-left: .5rem;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--dark);
+        border-radius: 50%;
+        background: #eee;
+        
+        &:hover{
+            color: #fff;
+            background: var(--purple);
+            transform: rotate(360deg);
+            transition: .5s all ease-in-out;
+        }
+        }
+        #hamburger-button{
+            display: none;
+        }
+    }
+
+    //MEDIA QUARIES
+    @media (max-width:991px) {
+        font-size: 8px;
+        padding: 1rem;
+    }
+
+    @media (max-width:820px){
+        .icons{
+            #hamburger-button{
+                display: inline-block;
+            }
+        }
+
+        .navbar{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: .1rem solid rgba(0,0,0,.2);
+            border-bottom: .1rem solid rgba(0,0,0,.2);
+            padding: 1rem;
+            clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+            transition: .2s clip-path ease-in-out;
+
+            &.active{
+                clip-path: polygon(0 0, 100% 0,100% 100%, 0 100%);
+            }
+            a{
+                display: block;
+                padding: 1.5rem;
+                background: #eee;
+                margin: 1rem;
+                font-size: 2rem;
+            }
+        }
+    }
+    
+}
